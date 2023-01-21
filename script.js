@@ -49,3 +49,22 @@ flipCoinButton.addEventListener("click", function() {
           });
     }
 });
+function flipCoin() {
+    let outcome;
+    // Generate a random number between 0 and 1
+    let randomNumber = Math.random();
+    // Set the threshold value to 0.5
+    let threshold = 0.5;
+    if (randomNumber > threshold) {
+        outcome = 'heads';
+    } else {
+        outcome = 'tails';
+    }
+    return outcome;
+}
+const flipCoinButton = document.getElementById("flipCoin");
+flipCoinButton.addEventListener("click", function() {
+    let outcome = flipCoin();
+    // Do something with the outcome
+    console.log(outcome);
+});
