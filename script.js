@@ -68,3 +68,17 @@ flipCoinButton.addEventListener("click", function() {
     // Do something with the outcome
     console.log(outcome);
 });
+const placeBetButton = document.getElementById("placeBet");
+const betAmountInput = document.getElementById("betAmount");
+placeBetButton.addEventListener("click", function(event) {
+  event.preventDefault();
+  if (!walletAddressInput.value) {
+    alert("Please connect your Phantom Wallet before placing a bet.");
+    return;
+  }
+  if (betAmountInput.value <= 0) {
+    alert("Please enter a valid bet amount.");
+    return;
+  }
+  // Place the bet and transfer the Solana to the contract
+});
