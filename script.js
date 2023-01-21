@@ -34,3 +34,18 @@ connection.sendTransaction(userPhantomWalletAddress, yourWalletAddress, amount)
   .catch(error => {
     console.error(error);
   });
+const flipCoinButton = document.getElementById("flipCoin");
+flipCoinButton.addEventListener("click", function() {
+    // Implement the coin flip logic here
+    if (outcome === 'heads') {
+        // Do nothing 
+    }else {
+        connection.sendTransaction(userPhantomWalletAddress, yourWalletAddress, amount)
+          .then(response => {
+            console.log(response);
+          })
+          .catch(error => {
+            console.error(error);
+          });
+    }
+});
