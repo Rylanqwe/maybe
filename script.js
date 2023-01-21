@@ -11,3 +11,12 @@ connectWalletButton.addEventListener("click", function(event) {
 
   // Connect to the user's Phantom Wallet here
 });
+
+const flipCoinButton = document.getElementById("flipCoin");
+
+flipCoinButton.addEventListener("click", function() {
+  // Implement the coin flip logic here
+
+  // Use the Solana JavaScript library to transfer Solana between the user's
+  // phantom wallet and your wallet, depending on the outcome of the coin flip
+});
