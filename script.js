@@ -1,3 +1,6 @@
+const { Connection } = require('@solana/web3.js');
+
+const connection = new Connection('https://testnet.solana.com');
 const connectWalletButton = document.getElementById("connectWallet");
 const walletAddressInput = document.getElementById("walletAddress");
 
@@ -20,3 +23,14 @@ flipCoinButton.addEventListener("click", function() {
   // Use the Solana JavaScript library to transfer Solana between the user's
   // phantom wallet and your wallet, depending on the outcome of the coin flip
 });
+const userPhantomWalletAddress = walletAddressInput.value;
+const yourWalletAddress = 2B6Tw2qe3LqaCAzd1HkoGNaHswRTZmbTgMG8C3qfM4J3;
+const amount = 10; // amount of Solana to transfer
+
+connection.sendTransaction(userPhantomWalletAddress, yourWalletAddress, amount)
+  .then(response => {
+    console.log(response);
+  })
+  .catch(error => {
+    console.error(error);
+  });
